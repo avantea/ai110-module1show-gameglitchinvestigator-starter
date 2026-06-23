@@ -29,6 +29,12 @@ Document at least 3 bugs you found. Add rows as needed.
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
+Correct suggestions:
+GitHub Copilot identified that the secret number was sometimes being converted to a string before comparison. This caused incorrect hint behavior because string comparisons do not work the same way as numeric comparisons. I verified the suggestion by reviewing the code, removing the string conversion, and testing the game manually.
+
+Incorrect suggestions:
+One AI suggestion initially appeared to fix the comparison logic, and the automated tests passed, but the live Streamlit game still behaved incorrectly. I discovered that app.py was still using old logic instead of the refactored functions in logic_utils.py. I verified this by manually testing the game and inspecting the code rather than relying only on the AI's recommendation.
+
 ---
 
 ## 3. Debugging and testing your fixes
@@ -37,6 +43,8 @@ Document at least 3 bugs you found. Add rows as needed.
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
+
+I verified my fixes using both automated tests and manual gameplay. I updated tests/test_game_logic.py and ran `python3 -m pytest`, which resulted in all tests passing. I also ran the Streamlit application and tested invalid inputs such as -1 and large numbers, verified the high/low hints, tested the New Game button, and checked the attempt counter behavior. Manual testing helped identify issues that were not caught by the automated tests.
 
 ---
 

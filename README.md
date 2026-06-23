@@ -33,11 +33,16 @@ It wrote the code, ran away, and now the game is unplayable.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+## Demo Walkthrough
+
+1. User starts a new game.
+2. User enters a guess of 40.
+3. Game responds with "Go Higher."
+4. User enters a guess of 80.
+5. Game responds with "Go Lower."
+6. Score updates after each valid guess.
+7. User enters the correct number.
+8. Game displays a win message and final score.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
